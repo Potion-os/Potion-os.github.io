@@ -1,0 +1,109 @@
+
+/* these are jst placeholder colors, will be changed by spotify
+or image */
+
+:root {
+    --color1: #3498db;
+    --color2: #2ecc71;
+    --color3: #e74c3c;
+    --color4: #f39c12;
+    --color5: #9b59b6;
+    --color6: #34495e;
+  }
+
+/* floating circles background */
+.circles {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    pointer-events: none; 
+
+}
+
+.circles li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 50px;
+	height: 50px;
+ /* White semi-transparent border */
+  border-radius: 50%;
+	animation: animate 25s linear infinite;
+	bottom: -100px;
+}
+
+.circles li:nth-child(1) {
+	left: 20%;
+	width: 200px;
+	height: 200px;
+	animation-delay: 1s;
+	animation-duration: 20s;
+	border-radius: 50%;
+  border: 30px solid var(--color2); /* White semi-transparent border */
+  bottom: -300px;
+
+}
+
+.circles li:nth-child(2) {
+	left: 5%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 3s;
+	animation-duration: 25s;
+	border-radius: 50%;
+  background: var(--color3); 
+  border: 20px solid var(--color3); 
+}
+
+.circles li:nth-child(3) {
+	left: 80%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 0s;
+	animation-duration: 30s;
+	border-radius: 50%;
+  border: 20px solid var(--color4); 
+  bottom: -800px;
+
+}
+
+.circles li:nth-child(4) {
+	left: 30%;
+	width: 80px;
+	height: 80px;
+  animation: animate 25s linear infinite;
+  border: 20px solid var(--color1); 
+	border-radius: 50%;
+  bottom: -150px;
+
+}
+
+.circles li:nth-child(5) {
+	left: 65%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 2s;
+	background: var(--color2);
+  animation: animate 25s linear infinite;
+	animation-duration: 28s;
+	border-radius: 50%;
+
+}
+
+
+@keyframes animate {
+	0% {
+		transform: translateY(0);
+
+	}
+	20% {
+		transform: translateY(-60vh);
+
+	}
+	100% {
+		transform: translateY(-300vh);
+
+	}
+}
