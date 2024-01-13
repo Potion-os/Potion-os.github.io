@@ -19,8 +19,6 @@
     <!-- JAVASCRIPT -->
     <script src="js/os-bar.js"></script>
     <script src="js/postit.js"></script>
-    <script src="js/spotify.js"></script>
-    <script src="js/spotifyPlayer.js"></script>
   </head>
 
   <body>
@@ -98,7 +96,7 @@
       </div>
     </div>
     <!-- stickynote1-->
-    <div class="stickyNote" id = "stickyNote" style="top: 200px; left: 100px">
+    <div class="stickyNote" id="stickyNote" style="top: 200px; left: 100px">
       <div class="stickyNoteHandle"></div>
       <div class="content" contenteditable="true">type note here...</div>
       <button class="closeButtonPost">
@@ -142,6 +140,11 @@
       </div>
     </div>
 
+    <script>
+      document.getElementById("displayName").textContent =
+        "profile.display_name";
+    </script>
+
     <!-- SPOTIFY PLAYER -->
     <div id="player-container">
       <div id="album-cover"></div>
@@ -172,5 +175,7 @@
     </div>
     <!-- JAVASCRIPT -->
     <script src="js/buttonControl.js"></script>
+    <script src="js/spotify.js"></script>
+    <script src="js/spotifyPlayer.js"></script>
   </body>
 </html>

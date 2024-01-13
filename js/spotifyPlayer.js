@@ -1,4 +1,7 @@
-populateUI(profile)
+import { getAccessToken } from "./spotify";
+import { profile } from "./spotify";
+
+populateUI(profile);
 
 function populateUI(profile) {
     document.getElementById("displayName").textContent = profile.display_name;
@@ -17,5 +20,17 @@ function populateUI(profile) {
 }
 
 function populateSettings(profile){
-    document.getElementById("displayName").innerText = "profile.display_name";
+    document.getElementById("displayName").textContent = "profile.display_name";
+}
+
+const NOW_PLAYING_URL = `https://api.spotify.com/v1/me/player/currently-playing`
+
+const getNowPlaying = async () => {
+  const { access_token } = await getAccessToken()
+
+  return fetch(NOW_PLAYING_URL, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
 }
