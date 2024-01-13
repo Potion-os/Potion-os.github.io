@@ -231,8 +231,10 @@ size: 24px;
   }
   
 
-#superButton:active{
-	cursor:grabbing;
+
+
+#superButton:hover{
+	filter: brightness(90%);
 }
 
 #superButtonInside {
@@ -242,9 +244,7 @@ size: 24px;
 	z-index: 4;
   }
 
-  #superButtonInside:active{
-	cursor:grabbing;
-  }
+
 
   #timerButton {
 	position: absolute;
@@ -257,19 +257,16 @@ size: 24px;
 	z-index: 3;
 	cursor:default;
   }
-#timerButton:active{
-	cursor:grabbing;
-}
+
 #timerButtonInside {
 	padding: 10px;
 	cursor: default;
 	stroke: var(--color6);
 	z-index: 4;
   }
-  #timerButtonInside:active{
-	cursor:grabbing;
-  }
-
+  #timerButton:hover{
+	filter: brightness(90%);
+}
   #stickyButton {
 	position: absolute;
 	width:64px;
@@ -281,18 +278,17 @@ size: 24px;
 	z-index: 3;
 	cursor:default;
   }
-#stickyButton:active{
-	cursor:grabbing;
-}
+
 #stickyButtonInside {
 	padding: 10px;
 	cursor: default;
 	stroke: var(--color6);
 	z-index: 4;
   }
-  #stickyButtonInside:active{
-	cursor:grabbing;
-  }
+
+  #stickyButton:hover{
+	filter: brightness(90%);
+}
 
 
 /*I'm sorry idrk how to make this like adjustable*/
