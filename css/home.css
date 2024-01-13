@@ -19,6 +19,28 @@ or image */
 	overflow: hidden;
   }
   
+
+
+  /*text*/
+#header h1{
+text-align: left;
+margin-top: 10px;
+margin-left: 15px;
+color:var(--color6);
+size: 24px;
+}
+
+#header h2{
+	text-align: left;
+	margin-top: 0px;
+	margin-left: 15px;
+	color:var(--color6);
+	size: 10px;
+	font-weight: 400;
+}
+	
+
+
 /* bottom bar */
 .bottom-bar{
     display: flex;
@@ -194,7 +216,85 @@ or image */
 
 	}
 }
-s
+
+/* App Things*/
+#superButton {
+	position: absolute;
+	margin-left: 15px;
+	width:64px;
+	height:64px;
+	background-color: var(--color3);
+	border-radius:15%;
+	border: 5px solid var(--color6); 
+	text-align: center;
+	z-index: 3;
+  }
+  
+
+#superButton:active{
+	cursor:grabbing;
+}
+
+#superButtonInside {
+	padding: 10px;
+	cursor: move;
+	stroke: var(--color6);
+	z-index: 4;
+  }
+
+  #superButtonInside:active{
+	cursor:grabbing;
+  }
+
+
+/*I'm sorry idrk how to make this like adjustable*/
+#settings {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -57%);
+	width: 500px;
+	height: 300px;
+	background-color: var(--color1);
+	border-radius: 15px;
+	border: 5px solid var(--color6);
+	box-sizing: border-box;
+	text-align: center;
+	z-index: 3;
+  }
+  #closeButton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: var(--color5);
+	outline: none;
+	z-index: 4; /* Ensure the close button is above the settings content */
+  }
+  
+  #closeButton path{
+	fill: var(--color6);
+  }
+  #closeButtonPost {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: var(--color5);
+	outline: none;
+	z-index: 4; /* Ensure the close button is above the settings content */
+  }
+
+  #closeButtonPost path{
+	fill: var(--color6);
+  }
 /* POST ITS*/
 .post-it-container{
 	background-color: white;
@@ -206,4 +306,29 @@ s
 	background-color: white;
 	width: 80px;
 	height: 80px;
+}
+
+
+/* STICKYYYY */
+#stickyNote {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-color: var(--color1);
+	border: 4px solid var(--color6);
+	border-radius: 15px;
+	z-index: 5;
+  }
+  
+  #stickyNoteHandle {
+	display: hidden;
+	width: 100%;
+	height: 20px;
+	cursor: grab;
+	z-index: 5;
+  }
+#content{
+	padding: 10px;
+	outline: none;
+	font-size: 14px;
 }
