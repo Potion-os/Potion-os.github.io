@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Potion.OS</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/home.css" />
@@ -24,18 +25,15 @@
     <div>
       <div class="bottom-bar">
         <div id="clock-time" class="clock"></div>
-        <div id="clock-date" class="clock"></div>
+        <div id="clock-date" class="clock2"></div>
       </div>
     </div>
 
-    <div id="postIt">
-      <div class="topBar"></div>
-      <div class="form">
-        <div contenteditable class="text-area">
-          Hello, <b>Edit Me First</b> Then Drag & Drop me.
-        </div>
+    <div onload="dragMove('post-it-container')" id="post-it-container" class="container">
+      <div id="post-it-text-area" contenteditable="">
+        Jot down a note!
       </div>
-    </div>
+    <div>
 
     <!-- FLOATING CIRCLE BACKGROUND-->
 

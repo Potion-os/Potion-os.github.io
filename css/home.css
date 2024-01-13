@@ -15,9 +15,8 @@ or image */
 	background-color: var(--color6);
 	margin: 0;
 	padding: 0;
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	overflow: hidden;
-	cursor: url('circleCursor.png'), auto;
   }
   
 /* bottom bar */
@@ -36,12 +35,22 @@ or image */
 
 /* Clock display */
 .clock{
-    color: black;
-    font-size: 15px;
+    color: var(--color5);
+    font-size: 12px;
     letter-spacing: 1px;
 	float: right;
-	margin: 2px 2px;
+	margin-right:14px;
+	margin-top:8px;
 }
+
+.clock2{
+    color: var(--color5);
+    font-size: 8px;
+    letter-spacing: 1px;
+	float: right;
+	margin-right: 14px;
+}
+
 
 /* floating circles background */
 .circles {
@@ -185,30 +194,16 @@ or image */
 
 	}
 }
-
+s
 /* POST ITS*/
-.topBar{
-	z-index:1;
-	position:absolute;
-	width:200px;
-	height:40px;
-	background-color:#f39c12;
-  }
-  .form{
-	margin-top:40px;
-	position:absolute;
-	width:200px;
-	height:160px;
-	background-color:#f1c40f;
-  }
-  .text-area{
-	position:absolute;
-	border-color:red;
-	width:180px;
-	height:140px;
-	margin:10px;
-	overflow:hide;
-  }
-  .text-area:focus{
-	outline: 0;
-  }
+.post-it-container{
+	background-color: white;
+	width: 100px;
+	height: 100px;
+	cursor: grab;
+}
+#post-it-text-area{
+	background-color: white;
+	width: 80px;
+	height: 80px;
+}

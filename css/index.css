@@ -145,8 +145,6 @@
   bottom: -250px; 
 }
 
-
-
 @keyframes animate {
 	0% {
 		transform: translateY(0);
@@ -161,3 +159,4 @@
 
 	}
 }
+
