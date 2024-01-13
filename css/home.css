@@ -367,6 +367,13 @@ size: 24px;
 	border-radius: 15px;
 	z-index: 5;
 	overflow: hidden;
+	resize: both;
+  }
+  stickyNote::-webkit-resizer {
+	background-color: var(--color6); /* Background color of the resize handle */
+	border: 2px solid var(--color6); /* Border color of the resize handle */
+	width: 10px;
+	height: 10px; 
   }
   
   #stickyNoteHandle {
