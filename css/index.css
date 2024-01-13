@@ -50,7 +50,6 @@
     color: var(--color5);
 }
 
-
 .bubbles{
 	position:absolute;
 	width:100%;
@@ -59,7 +58,8 @@
 	overflow:hidden;
 	top:0;
 	left:0;
-	pointer-events: none
+	pointer-events: none;
+	background:#c15cff;
   }
   .bubble{
 	position: absolute;
