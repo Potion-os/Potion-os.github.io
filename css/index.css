@@ -5,6 +5,7 @@
     --color4: #894cd9;
     --color5: #a767d8;
     --color6: #ffffff;
+	--color7: #000000;
   }
 
 
@@ -13,7 +14,7 @@
     margin: 40vh 0;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 22px;
+    font-size: 36px;
 }
 #title #title-inner{
     display: flex;
@@ -28,17 +29,26 @@
 	flex-wrap: wrap;
 }
 
-#welcome-color, #title h2{
+#welcome-color{
+	transition: 0.2s;
     color: var(--color5); 
 }
 
+#welcome-color:hover{
+	font-size: 125px;
+	transition: 0.2s;
+	color: var(--color7)
+}
+
 #title h2{
-    font-size: 18px;
+    font-size: 20px;
 	text-wrap: wrap;
+	color:#000000;
+	padding: 3px;
 }
 
 .button a{
-    display: auto;
+    display: inline-block;
     margin: 1em;
     font-weight: 550;
     transition: 0.5s;
@@ -48,13 +58,13 @@
 	padding: 8px 10px;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
 	font-size: 16px;
 	border-radius:8px;
+
 }
 
 .button a:hover{
-    transition: 0.3s;
+    transition: 0.2s;
 	background-color:var(--color4);
 }
 
@@ -160,3 +170,4 @@
 	  transform:translateX(-5px);
 	}
   }
+
