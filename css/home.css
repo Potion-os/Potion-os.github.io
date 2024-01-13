@@ -220,7 +220,6 @@ size: 24px;
 /* App Things*/
 #superButton {
 	position: absolute;
-	margin-left: 15px;
 	width:64px;
 	height:64px;
 	background-color: var(--color3);
