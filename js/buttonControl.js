@@ -144,8 +144,13 @@ document.getElementById('stickyButton').addEventListener('click', function () {
   // Create a new div element
   var newStickyNote = document.createElement('div');
   newStickyNote.classList.add('stickyNote');
-  newStickyNote.style.top = '200px';
-  newStickyNote.style.left = '100px';
+
+  // Generate random initial position within the screen
+  const randomTop = Math.random() * (window.innerHeight - 200); // Adjust 200 based on your sticky note height
+  const randomLeft = Math.random() * (window.innerWidth - 200); // Adjust 200 based on your sticky note width
+
+  newStickyNote.style.top = `${randomTop}px`;
+  newStickyNote.style.left = `${randomLeft}px`;
   newStickyNote.style.backgroundColor = getRandomColor();
   newStickyNote.innerHTML = `
       <div class="stickyNoteHandle"></div>
@@ -199,8 +204,3 @@ function attachStickyNoteEventListeners(stickyNote) {
     stickyNoteHandle.style.cursor = 'grab';
   }
 }
-
-
-
-
- 
