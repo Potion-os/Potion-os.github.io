@@ -16,6 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+
+    <script src="js/spotify-player.js"></script>
   </head>
 
   <body>
@@ -91,7 +93,6 @@
         </svg>
       </div>
     </div>
-
     <!-- stickynote1-->
     <div class="stickyNote" style="top: 200px; left: 100px">
       <div class="stickyNoteHandle"></div>
@@ -134,6 +135,19 @@
         <h2>timer selection:</h2>
         <h2>album cover:</h2>
         <h2>account: <span id="settings-profile"></span></h2>
+      </div>
+    </div>
+
+    <!-- SPOTIFY PLAYER -->
+    <div id="player-container">
+      <div id="album-cover"></div>
+      <div id="song-name"></div>
+      <div id="artist"></div>
+      <div id="time-left"></div>
+      <div id="player-adjust">
+        <i id="rewind">Back</i>
+        <i id="pause/start">Stop</i>
+        <i id="skip">Skip</i>
       </div>
     </div>
 

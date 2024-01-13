@@ -1,5 +1,9 @@
+populateSettings(globalVariable.profile);
+
 function populateSettings(profile){
-    document.getElementById("settings-profile").innerText = profile.display_name;
+    document.getElementById("settings-profile").textContent = "profile.display_name";
 }
 
-populateSettings(globalVariable.profile);
+function changeBackground(albumCover){
+
+}
