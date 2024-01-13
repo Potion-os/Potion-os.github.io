@@ -97,3 +97,7 @@ function populateUI(profile) {
     document.getElementById("url").innerText = profile.href;
     document.getElementById("url").setAttribute("href", profile.href);
 }
+
+function populateSettings(profile){
+    document.getElementById("profile").innerText = "Account: " + profile.display_name;
+}
