@@ -1,0 +1,30 @@
+{
+  "name": "potion-os.github.io",
+  "version": "1.0.0",
+  "description": "Resolution: A hub for study essentials, with Spotify integration ",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm -v",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Potion-os/Potion-os.github.io.git"
+  },
+  "keywords": [
+    "resolution"
+  ],
+  "author": "Potion-OS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Potion-os/Potion-os.github.io/issues"
+  },
+  "homepage": "https://github.com/Potion-os/Potion-os.github.io#readme",
+  "devDependencies": {
+    "electron": "^28.1.3"
+  }
+  
+
+}
+
+  
