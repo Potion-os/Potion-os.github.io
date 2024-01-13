@@ -371,7 +371,8 @@ size: 24px;
 /*ill fix later or make look better later*/
 .stickyNote::-webkit-resizer {
     /* Background color of the resize handle */
-    border: 1px solid var(--color6);
+	background-color: transparent;
+	border-radius: 10px 20px 20px 15px;
     /* Border color of the resize handle */
     width: 1px;
     height: 11px;

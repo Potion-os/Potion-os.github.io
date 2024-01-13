@@ -133,17 +133,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   });
-
 // add sticky note
 
 function getRandomColor() {
   const randomColorIndex = Math.floor(Math.random() * 4) + 1;
   return `var(--color${randomColorIndex})`;
 }
+
 document.getElementById('stickyButton').addEventListener('click', function () {
   // Create a new div element
   var newStickyNote = document.createElement('div');
-  
   newStickyNote.classList.add('stickyNote');
   newStickyNote.style.top = '200px';
   newStickyNote.style.left = '100px';
@@ -160,7 +159,47 @@ document.getElementById('stickyButton').addEventListener('click', function () {
 
   // Append the new sticky note to the document body or a specific container
   document.body.appendChild(newStickyNote);
+
+  // Attach event listeners to the new sticky note
+  attachStickyNoteEventListeners(newStickyNote);
 });
+
+// Function to attach event listeners to a sticky note
+function attachStickyNoteEventListeners(stickyNote) {
+  const stickyNoteHandle = stickyNote.querySelector('.stickyNoteHandle');
+  const closeButton = stickyNote.querySelector('.closeButtonPost');
+  let offsetX, offsetY;
+
+  stickyNoteHandle.addEventListener('mousedown', function (e) {
+    e.preventDefault();
+
+    offsetX = e.clientX - stickyNote.getBoundingClientRect().left;
+    offsetY = e.clientY - stickyNote.getBoundingClientRect().top;
+
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('mouseup', dragEnd);
+
+    stickyNoteHandle.style.cursor = 'grabbing';
+  });
+
+  // WHEN I CLICK IT CLOSES
+  closeButton.addEventListener('click', function () {
+    stickyNote.style.display = 'none';
+  });
+
+  function dragMove(e) {
+    stickyNote.style.left = (e.clientX - offsetX) + 'px';
+    stickyNote.style.top = (e.clientY - offsetY) + 'px';
+  }
+
+  function dragEnd() {
+    document.removeEventListener('mousemove', dragMove);
+    document.removeEventListener('mouseup', dragEnd);
+
+    stickyNoteHandle.style.cursor = 'grab';
+  }
+}
+
 
 
 
