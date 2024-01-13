@@ -25,12 +25,19 @@ or image */
 	height: 50px; 
 	background-color: var(--color2);
 	position: fixed;
-	bottom: -15px;
+	bottom: -1px;
 	left: 0;
 	width: 100%;
 	z-index: 1;
 }
 
+/* Clock display */
+.clock{
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 7px;
+}
 
 /* floating circles background */
 .circles {
