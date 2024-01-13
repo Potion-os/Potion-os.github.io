@@ -19,18 +19,18 @@
 }
 
 #welcome-color, #title h2{
-    color: purple;
+    color: #a767d8;
 }
 
-#enter-button{
+.button a{
     display: flex;
     margin: 1em;
     font-weight: 700;
-}
-
-#enter-button:hover{
     transition: 0.5s;
-    color: purple;
+    color: black;
 }
 
-
+.button a:hover{
+    transition: 0.5s;
+    color: #a767d8;
+}
