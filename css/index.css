@@ -75,7 +75,7 @@
 	background:#d38bff;
 	border-radius:50%;
 	opacity:0.125;
-	animation: rise 10s infinite ease-in;
+	animation: rise 7s infinite ease-in;
   }
   .bubble:nth-child(1){
 	width:35px;
