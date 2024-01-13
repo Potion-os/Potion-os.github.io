@@ -12,9 +12,10 @@ async function run(){
     } 
     else {
         const accessToken = await getAccessToken(clientID, code);
-        const profile = await fetchProfile(accessToken);
+        var globalVariable={
+            profile : await fetchProfile(accessToken)
+        }
         console.log(profile);
-        populateUI(profile);
     }
 }
 
