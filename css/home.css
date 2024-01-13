@@ -272,7 +272,7 @@ size: 24px;
 	font-size: 20px;
 	color: var(--color5);
 	outline: none;
-	z-index: 4; /* Ensure the close button is above the settings content */
+	z-index: 4; 
   }
   
   #closeButton path{
@@ -282,13 +282,12 @@ size: 24px;
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	cursor: pointer;
 	background: none;
-	border: none;
-	font-size: 20px;
 	color: var(--color5);
 	outline: none;
-	z-index: 4; /* Ensure the close button is above the settings content */
+	z-index: 4; 
+	border:none;
+	cursor: pointer;
   }
 
   #closeButtonPost path{
