@@ -217,6 +217,7 @@ size: 24px;
 	}
 }
 
+
 /* App Things*/
 #superButton {
 	position: absolute;
@@ -228,10 +229,16 @@ size: 24px;
 	text-align: center;
 	z-index: 3;
 	cursor:default;
+	top: 80px;
+	left: 80px;
   }
+
+
 
 #superButton:hover{
 	filter: brightness(90%);
+	transform: scale(1.1);
+	transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 #superButtonInside {
@@ -245,14 +252,16 @@ size: 24px;
 
   #timerButton {
 	position: absolute;
-	width:64px;
-	height:64px;
+	width: 64px;
+	height: 64px;
 	background-color: var(--color2);
-	border-radius:15%;
-	border: 5px solid var(--color6); 
+	border-radius: 15%;
+	border: 5px solid var(--color6);
 	text-align: center;
 	z-index: 3;
-	cursor:default;
+	cursor: default;
+	left: 80px; 
+	top: 180px;  
   }
 
 #timerButtonInside {
@@ -263,18 +272,14 @@ size: 24px;
   }
   #timerButton:hover{
 	filter: brightness(90%);
+	transform: scale(1.1);
+	transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-	.grow { 
-		transition: all .2s ease-in-out; 
-		}
-		
-		.grow:hover { 
-		transform: scale(1.1); 
-		}
-		
 }
   #stickyButton {
 	position: absolute;
+	left: 80px; 
+	top: 280px; 
 	width:64px;
 	height:64px;
 	background-color: var(--color4);
@@ -283,7 +288,6 @@ size: 24px;
 	text-align: center;
 	z-index: 3;
 	cursor:default;
-	top: 100;
   }
 
 #stickyButtonInside {
@@ -295,7 +299,11 @@ size: 24px;
 
   #stickyButton:hover{
 	filter: brightness(90%);
+	transform: scale(1.1);
+	transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
+
+
 
 
 /*I'm sorry idrk how to make this like adjustable*/
@@ -346,9 +354,12 @@ size: 24px;
 	fill: var(--color6);
   }
 
+
 /* STICKYYYY */
 #stickyNote {
 	position: absolute;
+	top: 200px;
+	left:100px;
 	width: 200px;
 	height: 200px;
 	background-color: var(--color1);
