@@ -5,9 +5,7 @@
   "main": "electron_main.js",
   "scripts": {
     "test": "npm -v",
-    "start": "electron .",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
