@@ -237,12 +237,60 @@ size: 24px;
 
 #superButtonInside {
 	padding: 10px;
-	cursor: move;
+	cursor: default;
 	stroke: var(--color6);
 	z-index: 4;
   }
 
   #superButtonInside:active{
+	cursor:grabbing;
+  }
+
+  #timerButton {
+	position: absolute;
+	width:64px;
+	height:64px;
+	background-color: var(--color2);
+	border-radius:15%;
+	border: 5px solid var(--color6); 
+	text-align: center;
+	z-index: 3;
+	cursor:default;
+  }
+#timerButton:active{
+	cursor:grabbing;
+}
+#timerButtonInside {
+	padding: 10px;
+	cursor: default;
+	stroke: var(--color6);
+	z-index: 4;
+  }
+  #timerButtonInside:active{
+	cursor:grabbing;
+  }
+
+  #stickyButton {
+	position: absolute;
+	width:64px;
+	height:64px;
+	background-color: var(--color4);
+	border-radius:15%;
+	border: 5px solid var(--color6); 
+	text-align: center;
+	z-index: 3;
+	cursor:default;
+  }
+#stickyButton:active{
+	cursor:grabbing;
+}
+#stickyButtonInside {
+	padding: 10px;
+	cursor: default;
+	stroke: var(--color6);
+	z-index: 4;
+  }
+  #stickyButtonInside:active{
 	cursor:grabbing;
   }
 
