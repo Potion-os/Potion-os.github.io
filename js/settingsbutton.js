@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       settings.style.display = settings.style.display === 'none' ? 'block' : 'none';
     });
   
+    
   // WHEN I CLICK IT CLOSES
   var settingClose = document.getElementById('closeButton');
   settingClose.addEventListener('click', function () {

@@ -17,10 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
       // WHEN I CLICK IT CLOSES
-  var closeButton = document.getElementById('closeButton');
+  var closeButton = document.getElementById('closeButtonPost');
   closeButton.addEventListener('click', function () {
     stickyNote.style.display = 'none';
   });
+
+
     function dragMove(e) {
       stickyNote.style.left = (e.clientX - offsetX) + 'px';
       stickyNote.style.top = (e.clientY - offsetY) + 'px';
