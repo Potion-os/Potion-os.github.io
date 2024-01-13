@@ -2,7 +2,7 @@
   "name": "potion-os.github.io",
   "version": "1.0.0",
   "description": "Resolution: A hub for study essentials, with Spotify integration ",
-  "main": "main.js",
+  "main": "electron_main.js",
   "scripts": {
     "test": "npm -v",
     "start": "electron ."
