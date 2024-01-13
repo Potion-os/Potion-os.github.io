@@ -127,11 +127,11 @@ or image */
 }
 
 .circles li:nth-child(7) {
-	left: 50%;
+	left: 80%;
 	width: 360px;
 	height: 360px;
-	animation-delay: 8s;
-  animation: animate 29s linear infinite;
+	animation-delay: 19s;
+  animation: animate 47s linear infinite;
   border: 20px solid var(--color1); 
 	border-radius: 50%;
   bottom: -400px;
