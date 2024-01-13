@@ -185,3 +185,30 @@ or image */
 
 	}
 }
+
+/* POST ITS*/
+.topBar{
+	z-index:1;
+	position:absolute;
+	width:200px;
+	height:40px;
+	background-color:#f39c12;
+  }
+  .form{
+	margin-top:40px;
+	position:absolute;
+	width:200px;
+	height:160px;
+	background-color:#f1c40f;
+  }
+  .text-area{
+	position:absolute;
+	border-color:red;
+	width:180px;
+	height:140px;
+	margin:10px;
+	overflow:hide;
+  }
+  .text-area:focus{
+	outline: 0;
+  }
