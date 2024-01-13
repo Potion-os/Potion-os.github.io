@@ -266,6 +266,15 @@ size: 24px;
   }
   #timerButton:hover{
 	filter: brightness(90%);
+
+	.grow { 
+		transition: all .2s ease-in-out; 
+		}
+		
+		.grow:hover { 
+		transform: scale(1.1); 
+		}
+		
 }
   #stickyButton {
 	position: absolute;
@@ -277,6 +286,7 @@ size: 24px;
 	text-align: center;
 	z-index: 3;
 	cursor:default;
+	top: 100;
   }
 
 #stickyButtonInside {
