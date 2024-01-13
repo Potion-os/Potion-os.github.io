@@ -231,20 +231,74 @@ size: 24px;
   }
   
 
-#superButton:active{
-	cursor:grabbing;
+
+
+#superButton:hover{
+	filter: brightness(90%);
 }
 
 #superButtonInside {
 	padding: 10px;
-	cursor: move;
+	cursor: default;
 	stroke: var(--color6);
 	z-index: 4;
   }
 
-  #superButtonInside:active{
-	cursor:grabbing;
+
+
+  #timerButton {
+	position: absolute;
+	width:64px;
+	height:64px;
+	background-color: var(--color2);
+	border-radius:15%;
+	border: 5px solid var(--color6); 
+	text-align: center;
+	z-index: 3;
+	cursor:default;
   }
+
+#timerButtonInside {
+	padding: 10px;
+	cursor: default;
+	stroke: var(--color6);
+	z-index: 4;
+  }
+  #timerButton:hover{
+	filter: brightness(90%);
+
+	.grow { 
+		transition: all .2s ease-in-out; 
+		}
+		
+		.grow:hover { 
+		transform: scale(1.1); 
+		}
+		
+}
+  #stickyButton {
+	position: absolute;
+	width:64px;
+	height:64px;
+	background-color: var(--color4);
+	border-radius:15%;
+	border: 5px solid var(--color6); 
+	text-align: center;
+	z-index: 3;
+	cursor:default;
+	top: 100;
+  }
+
+#stickyButtonInside {
+	padding: 10px;
+	cursor: default;
+	stroke: var(--color6);
+	z-index: 4;
+  }
+
+  #stickyButton:hover{
+	filter: brightness(90%);
+}
 
 
 /*I'm sorry idrk how to make this like adjustable*/
