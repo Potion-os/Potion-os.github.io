@@ -10,7 +10,7 @@
 
 #title{
     display: flex;
-    margin: 40vh;
+    margin: 40vh 0;
     justify-content: center;
     flex-wrap: wrap;
     font-size: 22px;
