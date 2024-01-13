@@ -229,9 +229,6 @@ size: 24px;
 	z-index: 3;
 	cursor:default;
   }
-  
-
-
 
 #superButton:hover{
 	filter: brightness(90%);
@@ -348,19 +345,6 @@ size: 24px;
   #closeButtonPost path{
 	fill: var(--color6);
   }
-/* POST ITS*/
-.post-it-container{
-	background-color: white;
-	width: 100px;
-	height: 100px;
-	cursor: grab;
-}
-#post-it-text-area{
-	background-color: white;
-	width: 80px;
-	height: 80px;
-}
-
 
 /* STICKYYYY */
 #stickyNote {
