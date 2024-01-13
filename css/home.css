@@ -24,6 +24,7 @@ or image */
 .bottom-bar{
     display: flex;
     flex-direction: column;
+	align-items: flex-end;
 	height: 50px; 
 	background-color: var(--color2);
 	position: fixed;
@@ -37,7 +38,9 @@ or image */
 .clock{
     color: black;
     font-size: 15px;
-    letter-spacing: 7px;
+    letter-spacing: 1px;
+	float: right;
+	margin: 2px 2px;
 }
 
 /* floating circles background */
