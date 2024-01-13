@@ -3,9 +3,9 @@
     --color2: #db74f0;
     --color3: #9870ff;
     --color4: #894cd9;
-    --color5: #a767d8;
+    --color5: #8661C1;
     --color6: #ffffff;
-	--color7: #000000;
+	--color7: #1f1c36;
   }
 
 
@@ -37,7 +37,7 @@
 #welcome-color:hover{
 	font-size: 125px;
 	transition: 0.2s;
-	color: var(--color7)
+	color: var(--color2)
 }
 
 #title h2{
@@ -83,7 +83,7 @@
 	bottom:-100px;
 	width:40px;
 	height: 40px;
-	background:#d38bff;
+	background:#8661C1;
 	border-radius:50%;
 	opacity:0.125;
 	animation: rise 7s infinite ease-in;
