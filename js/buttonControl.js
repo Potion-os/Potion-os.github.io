@@ -140,6 +140,8 @@ function getRandomColor() {
   return `var(--color${randomColorIndex})`;
 }
 
+
+
 document.getElementById('stickyButton').addEventListener('click', function () {
   // Create a new div element
   var newStickyNote = document.createElement('div');
@@ -154,7 +156,7 @@ document.getElementById('stickyButton').addEventListener('click', function () {
   newStickyNote.style.backgroundColor = getRandomColor();
   newStickyNote.innerHTML = `
       <div class="stickyNoteHandle"></div>
-      <div class="content" contenteditable="true">Type note here...</div>
+      <div class="content" contenteditable="true" oninput="renderContent()">Type note here...</div>
       <button class="closeButtonPost">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0.719357 1.12146C1.37023 0.470582 2.42551 0.470582 3.07638 1.12146L11.8979 9.94295L20.7194 1.12146C21.3702 0.470582 22.4255 0.470582 23.0764 1.12146C23.7273 1.77233 23.7273 2.8276 23.0764 3.47848L14.2549 12.3L23.0764 21.1215C23.7273 21.7723 23.7273 22.8276 23.0764 23.4785C22.4255 24.1294 21.3702 24.1294 20.7194 23.4785L11.8979 14.657L3.07638 23.4785C2.42551 24.1294 1.37023 24.1294 0.719357 23.4785C0.0684827 22.8276 0.0684827 21.7723 0.719357 21.1215L9.54085 12.3L0.719357 3.47848C0.0684827 2.8276 0.0684827 1.77233 0.719357 1.12146Z"/>
@@ -204,3 +206,4 @@ function attachStickyNoteEventListeners(stickyNote) {
     stickyNoteHandle.style.cursor = 'grab';
   }
 }
+
