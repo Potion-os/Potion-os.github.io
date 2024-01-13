@@ -40,22 +40,22 @@
 .button a{
     display: auto;
     margin: 1em;
-    font-weight: 700;
+    font-weight: 550;
     transition: 0.5s;
     color: var(--color6);
 	background-color: #1c1c1c; /* Green */
 	border: none;
-	padding: 8px 8px;
+	padding: 8px 10px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	border-radius:4px;
+	border-radius:8px;
 }
 
 .button a:hover{
-    transition: 0.5s;
-    color: var(--color5);
+    transition: 0.3s;
+	background-color:var(--color4);
 }
 
 .bubbles{
