@@ -1,6 +1,6 @@
 const clientId = "e132791c06514995a70e23f123a8cf08";
 const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
+let code = params.get("code");
 
 export async function redirectToAuthCodeFlow(clientId) {
     const verifier = generateCodeVerifier(128);
