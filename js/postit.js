@@ -1,21 +1,36 @@
-var drag;
+document.addEventListener('DOMContentLoaded', function () {
+    const stickyNote = document.getElementById('stickyNote');
+    const stickyNoteHandle = document.getElementById('stickyNoteHandle');
+    let offsetX, offsetY;
+  
+    stickyNoteHandle.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+  
+      offsetX = e.clientX - stickyNote.getBoundingClientRect().left;
+      offsetY = e.clientY - stickyNote.getBoundingClientRect().top;
+  
+      document.addEventListener('mousemove', dragMove);
+      document.addEventListener('mouseup', dragEnd);
+  
+      stickyNoteHandle.style.cursor = 'grabbing';
+    });
+  
 
-function dragMove(id){
-    var element = document.getElementById(id);
-    element.style.position = "absolute";
-    element.onmousedown = function(){
-        drag = element;
+      // WHEN I CLICK IT CLOSES
+  var closeButton = document.getElementById('closeButton');
+  closeButton.addEventListener('click', function () {
+    stickyNote.style.display = 'none';
+  });
+    function dragMove(e) {
+      stickyNote.style.left = (e.clientX - offsetX) + 'px';
+      stickyNote.style.top = (e.clientY - offsetY) + 'px';
     }
-}
-
-document.onmouseup = function(e){
-    drag = null;
-}
-
-document.onmousemove = function(e){
-    var x = e.pageX;
-    var y = e.pageY;
-
-    drag.style.left = x + "px";
-    drag.style.top = y = "px";
-}
+  
+    function dragEnd() {
+      document.removeEventListener('mousemove', dragMove);
+      document.removeEventListener('mouseup', dragEnd);
+  
+      stickyNoteHandle.style.cursor = 'grab';
+    }
+  });
+  
