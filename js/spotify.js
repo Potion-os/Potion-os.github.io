@@ -12,10 +12,10 @@ async function run(){
     } 
     else {
         const accessToken = await getAccessToken(clientID, code);
-        var globalVariable={
-            profile : await fetchProfile(accessToken)
-        }
+        const refreshToken = await getRefreshToken();
+        const profile = await fetchProfile(accessToken)
         console.log(profile);
+        populateUI(profile);
     }
 }
 
@@ -75,6 +75,29 @@ export async function getAccessToken(clientId, code) {
     return access_token;
 }
 
+const getRefreshToken = async () => {
+    // refresh token that has been previously stored
+    const refreshToken = localStorage.getItem('refresh_token');
+    const url = "https://accounts.spotify.com/api/token";
+ 
+     const payload = {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/x-www-form-urlencoded'
+       },
+       body: new URLSearchParams({
+         grant_type: 'refresh_token',
+         refresh_token: refreshToken,
+         client_id: clientId
+       }),
+     }
+     const body = await fetch(url, payload);
+     const response = await body.json();
+ 
+     localStorage.setItem('access_token', response.accessToken);
+     localStorage.setItem('refresh_token', response.refreshToken);
+   }
+
 async function fetchProfile(token) {
     const result = await fetch("https://api.spotify.com/v1/me", {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -101,5 +124,5 @@ function populateUI(profile) {
 }
 
 function populateSettings(profile){
-    document.getElementById("profile").innerText = "Account: " + profile.display_name;
+    document.getElementById("settings-profile").textContent = "Account: " + profile.display_name;
 }
