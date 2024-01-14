@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // actual pomodoro timing!
-
 document.addEventListener('DOMContentLoaded', function () {
     const pomodoro = document.querySelector('.pomodoro');
     const sessionCountElement = document.getElementById('sessionCount');
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const upNextElement = document.getElementById('upNext');
     const nextButton = document.querySelector('.nextButton');
   
-    let sessionCount = 1;
+    let sessionCount = 0;
     let isPomodoro = true;
     let timerDuration = isPomodoro ? 25 * 60 : 5 * 60; // Initial timer duration in seconds
     let timerInterval;
@@ -72,26 +71,36 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     function nextTimer() {
-      isPomodoro = !isPomodoro;
-      sessionCount++;
-  
       if (isPomodoro) {
         timerDuration = 25 * 60;
         upNextElement.textContent = 'Lock in!';
+        sessionCount++;
+  
+        // Check if it's time for a long break
+        if (sessionCount % 4 === 0) {
+          upNextElement.textContent = 'Now take a long break!';
+          timerDuration = 15 * 60;
+        }
       } else {
         timerDuration = 5 * 60;
-        upNextElement.textContent = 'Break!';
+  
+        if (sessionCount % 4 === 0) {
+          // After the long break, reset to session 1
+          upNextElement.textContent = 'Lock in!';
+          sessionCount = 1;
+        } else {
+          upNextElement.textContent = 'Break!';
+        }
       }
   
       sessionCountElement.textContent = sessionCount;
-      startTimer();
+      isPomodoro = !isPomodoro;
     }
   
     nextButton.addEventListener('click', function () {
       clearInterval(timerInterval);
       nextTimer();
+      startTimer();
     });
-  
-    // Start the initial timer
-    startTimer();
   });
+  

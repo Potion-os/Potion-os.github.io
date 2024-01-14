@@ -2,7 +2,6 @@ const clientID = "dbdcca5fc40142e1a745b430bc4b646b";
 const clientSecret = "d26f71e17af743bd8c3cfc677c5008f1";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
-let profile = undefined;
 
 document.getElementById("get-started").addEventListener("click", run);
 
@@ -14,7 +13,7 @@ async function run(){
     else {
         const accessToken = await getAccessToken(clientID, code);
         const refreshToken = await getRefreshToken();
-        profile = await fetchProfile(accessToken);
+        const profile = await fetchProfile(accessToken);
         console.log(profile);
     }
 }
