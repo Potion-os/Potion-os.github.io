@@ -6,7 +6,14 @@
     <title>Potion.OS</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 
-    <!-- CSS -->
+    <!-- MathJax (LaTeX library) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Marked (Markdown library) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- CSS -->  
     <link rel="stylesheet" href="css/home.css" />
 
     <!-- FONTS -->
@@ -19,6 +26,22 @@
     <!-- JAVASCRIPT -->
     <script src="js/os-bar.js"></script>
     <script src="js/postit.js"></script>
+    <script src="js/rendercontent.js"></script>
+    
+    <!-- CONFIGURE LATEX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+        },
+        CommonHTML: { linebreaks: { automatic: true } },
+        "HTML-CSS": { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } },
+      });
+    </script>
+    
   </head>
 
   <body>
@@ -95,10 +118,11 @@
         </svg>
       </div>
     </div>
+
     <!-- stickynote1-->
     <div class="stickyNote" id="stickyNote" style="top: 200px; left: 100px">
       <div class="stickyNoteHandle"></div>
-      <div class="content" contenteditable="true">type note here...</div>
+      <div class="content" contenteditable="true" oninput="renderContent()">hello</div>
       <button class="closeButtonPost">
         <svg
           width="16"
@@ -140,9 +164,35 @@
       </div>
     </div>
 
+    <!-- POMODORO TIMER -->
+    <div class = "pomodoro">
+      <div class="pomodoroHandle">
+        <div id = "header">
+          <h1>pomodoro</h1>
+        </div>
+          <button class="closeButtonPomo">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.719357 1.12146C1.37023 0.470582 2.42551 0.470582 3.07638 1.12146L11.8979 9.94295L20.7194 1.12146C21.3702 0.470582 22.4255 0.470582 23.0764 1.12146C23.7273 1.77233 23.7273 2.8276 23.0764 3.47848L14.2549 12.3L23.0764 21.1215C23.7273 21.7723 23.7273 22.8276 23.0764 23.4785C22.4255 24.1294 21.3702 24.1294 20.7194 23.4785L11.8979 14.657L3.07638 23.4785C2.42551 24.1294 1.37023 24.1294 0.719357 23.4785C0.0684827 22.8276 0.0684827 21.7723 0.719357 21.1215L9.54085 12.3L0.719357 3.47848C0.0684827 2.8276 0.0684827 1.77233 0.719357 1.12146Z"
+              />
+            </svg>
+          </button>
+        </div>
+          <div id = "pomoTimer">
+            20;32
+          </div>
+    </div>
     <script>
       document.getElementById("displayName").textContent =
-        "profile.display_name";
+      "HELPPPP" + profile.display_name ;
     </script>
 
     <!-- SPOTIFY PLAYER -->
@@ -157,6 +207,31 @@
         <i id="skip">Skip</i>
       </div>
     </div>
+
+    <script>
+      setInterval(getPlayingDetails, 1000);
+
+      async function getPlayingDetails(nowPlaying) {
+        const response = await getNowPlaying()
+
+        if (response.status === 204 || response.status > 400) {
+          return res.status(200).json({ isPlaying: false })
+        } 
+
+        const song = await response.json()
+        const isPlaying = song.is_playing
+        const title = song.item.name
+        const artist = song.item.artists.map(_artist => _artist.name).join(', ')
+        const album = song.item.album.name
+        const albumImageUrl = song.item.album.images[0].url
+        const duration = song.item.duration_ms
+        const progress = song.progress_ms
+
+        document.getElementById("artist").textContent(artist);
+        document.getElementById("album-cover").textContent(albumImageUrl);
+        document.getElementById("song-name").textContent(title);
+      }
+    </script>
 
     <!-- FLOATING CIRCLE BACKGROUND-->
 

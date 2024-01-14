@@ -33,3 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
       stickyNoteHandle.style.cursor = 'grab';
   }
 });
+
+// markdown and latex renderer
+function renderContent() {
+  const contentDiv = document.querySelector('.content');
+  const contentText = contentDiv.innerText;
+
+  // Check if the content includes LaTeX commands
+  if (contentText.includes('$')) {
+    // Process LaTeX using MathJax
+    MathJax.typesetClear([contentDiv]);
+    MathJax.typesetPromise([contentDiv]).then(() => {
+      // Update the content with the rendered LaTeX
+      contentDiv.innerHTML = contentText;
+    });
+  }
+}

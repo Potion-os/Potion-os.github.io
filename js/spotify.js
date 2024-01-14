@@ -2,7 +2,7 @@ const clientID = "dbdcca5fc40142e1a745b430bc4b646b";
 const clientSecret = "d26f71e17af743bd8c3cfc677c5008f1";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
-export const profile = undefined;
+const profile = undefined;
 
 document.getElementById("get-started").addEventListener("click", run);
 
@@ -105,3 +105,17 @@ async function fetchProfile(token) {
 
     return await result.json();
 }
+
+const NOW_PLAYING_URL = `https://api.spotify.com/v1/me/player/currently-playing`
+
+const getNowPlaying = async () => {
+  const { access_token } = await getAccessToken()
+
+  return fetch(NOW_PLAYING_URL, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
+}
+
+export {getNowPlaying};
