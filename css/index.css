@@ -7,10 +7,8 @@
     --color6: #ffffff;
 	--color7: #1f1c36;
   }
-
-
 #title{
-    display: flex;
+	display: flex;
     margin: 40vh 0;
     justify-content: center;
     flex-wrap: wrap;
@@ -47,9 +45,9 @@
 	padding: 3px;
 }
 
-.button a{
-    display: inline-block;
-    margin: 1em;
+input[type="submit"] {
+    display: block;
+    margin: 0;
     font-weight: 550;
     transition: 0.5s;
     color: var(--color6);
@@ -58,22 +56,22 @@
 	padding: 8px 10px;
 	text-align: center;
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 18px;
 	border-radius:8px;
 
 }
 
-.button a:hover{
+input[type="submit"]:hover{
     transition: 0.2s;
 	background-color:var(--color4);
 }
 
 .bubbles{
 	position:absolute;
-	width:100%;
-	height: 100%;
+	width:100vw;
+	height: 100vh;
 	z-index:0;
-	overflow:hidden;
+	overflow:visible;
 	top:0;
 	left:0;
 	pointer-events: none;
@@ -86,7 +84,7 @@
 	background:#8661C1;
 	border-radius:50%;
 	opacity:0.125;
-	animation: rise 7s infinite ease-in;
+	animation: rise 8s infinite ease-in;
   }
   .bubble:nth-child(1){
 	width:35px;
@@ -163,11 +161,16 @@
 	  transform:translateX(0);
 	}
 	50%{
-	  transform:translate(5px);
+	  transform:translate(100px);
 	}
 	100%{
 	  bottom:1080px;
-	  transform:translateX(-5px);
+	  transform:translateX(-200px);
 	}
   }
 
+.potion_img {
+	display: block;
+	transform: scale(0.75);
+	justify-content: center;
+}
