@@ -105,37 +105,3 @@ async function fetchProfile(token) {
 
     return await result.json();
 }
-
-const NOW_PLAYING_URL = `https://api.spotify.com/v1/me/player/currently-playing`
-
-const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken()
-
-  return fetch(NOW_PLAYING_URL, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  })
-}
-
-export {getNowPlaying};
-
-async function setUpPlayer(accessToken, deviceID){
-  window.onSpotifyWebPlaybackSDKReady = () => {
-    const token = accessToken;
-    const player = new Spotify.Player({
-      name: 'Web Playback SDK Quick Start Player',
-      getOAuthToken: cb => { cb(token); },
-      volume: 0.5
-    });
-
-    // Ready
-    player.addListener('ready', ({ device_id }) => {
-      console.log('Ready with Device ID', device_id);
-    });
-
-    // Not Ready
-    player.addListener('not_ready', ({ device_id }) => {
-      console.log('Device ID has gone offline', device_id);
-    });
-}
