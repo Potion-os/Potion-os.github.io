@@ -3,8 +3,11 @@ import { profile } from "./spotify";
 
 populateUI(profile);
 
+function toggleClick(element){
+  element.classList.toggle("fa-play-circle");
+}
 function populateUI(profile) {
-    document.getElementById("displayName").textContent = profile.display_name;
+    document.getElementById("displayName").textContent = profile.display_name == null? "no login": profile.display_name;
     // if (profile.images[0]) {
     //     const profileImage = new Image(200, 200);
     //     profileImage.src = profile.images[0].url;
@@ -17,10 +20,6 @@ function populateUI(profile) {
     // document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
     // document.getElementById("url").innerText = profile.href;
     // document.getElementById("url").setAttribute("href", profile.href);
-}
-
-function populateSettings(profile){
-    document.getElementById("displayName").textContent = "profile.display_name";
 }
 
 const NOW_PLAYING_URL = `https://api.spotify.com/v1/me/player/currently-playing`

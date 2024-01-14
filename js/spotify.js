@@ -2,7 +2,7 @@ const clientID = "dbdcca5fc40142e1a745b430bc4b646b";
 const clientSecret = "d26f71e17af743bd8c3cfc677c5008f1";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
-const profile = undefined;
+let profile = undefined;
 
 document.getElementById("get-started").addEventListener("click", run);
 
@@ -119,3 +119,23 @@ const getNowPlaying = async () => {
 }
 
 export {getNowPlaying};
+
+async function setUpPlayer(accessToken, deviceID){
+  window.onSpotifyWebPlaybackSDKReady = () => {
+    const token = accessToken;
+    const player = new Spotify.Player({
+      name: 'Web Playback SDK Quick Start Player',
+      getOAuthToken: cb => { cb(token); },
+      volume: 0.5
+    });
+
+    // Ready
+    player.addListener('ready', ({ device_id }) => {
+      console.log('Ready with Device ID', device_id);
+    });
+
+    // Not Ready
+    player.addListener('not_ready', ({ device_id }) => {
+      console.log('Device ID has gone offline', device_id);
+    });
+}

@@ -32,3 +32,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure MathJax Initialization
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
   }); 
+  

@@ -13,6 +13,9 @@
     <!-- Marked (Markdown library) -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- ICONS LIBRARY -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- CSS -->  
     <link rel="stylesheet" href="css/home.css" />
 
@@ -27,6 +30,9 @@
     <script src="js/os-bar.js"></script>
     <script src="js/postit.js"></script>
     <script src="js/rendercontent.js"></script>
+    <script src="js/pomoTimer.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="js/spotifyPlayer.js"></script>
     
     <!-- CONFIGURE LATEX -->
     <script type="text/x-mathjax-config">
@@ -164,8 +170,13 @@
       </div>
     </div>
 
+    <script src="js/spotify.js">
+      document.getElementById("displayName").textContent =
+      profile.display_name;
+    </script>
+
     <!-- POMODORO TIMER -->
-    <div class = "pomodoro">
+    <div id = "pomodoro" class = "pomodoro">
       <div class="pomodoroHandle">
         <div id = "header">
           <h1>pomodoro</h1>
@@ -186,52 +197,29 @@
             </svg>
           </button>
         </div>
-          <div id = "pomoTimer">
-            20;32
-          </div>
+        <div id = "whatSession"> session <span id="sessionCount">1</span>/3</div>
+        <div id = "pomoTimer">25:00</div>
+        <div id = "upNext"> let's start!</div>
+        <button class="nextButton">ok!</button>
     </div>
-    <script>
-      document.getElementById("displayName").textContent =
-      "HELPPPP" + profile.display_name ;
-    </script>
 
     <!-- SPOTIFY PLAYER -->
     <div id="player-container">
-      <div id="album-cover"></div>
-      <div id="song-name"></div>
-      <div id="artist"></div>
-      <div id="time-left"></div>
-      <div id="player-adjust">
-        <i id="rewind">Back</i>
-        <i id="pause/start">Stop</i>
-        <i id="skip">Skip</i>
+      <div class="item" id="album-cover"><img src="dosii.png"></div>
+      <div class="item" id="song-name">fairy of shampoo</div>
+      <div class="item" id="artist">dosii</div>
+      <div class="item" id="time-left"></div>
+      <div class="item" id="player-adjust">
+        <i class="item fa fa-2x fa-fast-backward" id="rewind"></i>
+        <i class="item fa fa-2x fa-pause" id="pause-start" onclick="toggleClick(this)"></i>
+        <script>
+          function toggleClick(element){
+            element.classList.toggle("fa-play-circle");
+          }
+        </script>
+        <i class="item fa fa-2x fa-fast-forward" id="skip"></i>
       </div>
     </div>
-
-    <script>
-      setInterval(getPlayingDetails, 1000);
-
-      async function getPlayingDetails(nowPlaying) {
-        const response = await getNowPlaying()
-
-        if (response.status === 204 || response.status > 400) {
-          return res.status(200).json({ isPlaying: false })
-        } 
-
-        const song = await response.json()
-        const isPlaying = song.is_playing
-        const title = song.item.name
-        const artist = song.item.artists.map(_artist => _artist.name).join(', ')
-        const album = song.item.album.name
-        const albumImageUrl = song.item.album.images[0].url
-        const duration = song.item.duration_ms
-        const progress = song.progress_ms
-
-        document.getElementById("artist").textContent(artist);
-        document.getElementById("album-cover").textContent(albumImageUrl);
-        document.getElementById("song-name").textContent(title);
-      }
-    </script>
 
     <!-- FLOATING CIRCLE BACKGROUND-->
 

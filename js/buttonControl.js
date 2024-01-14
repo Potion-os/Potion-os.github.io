@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
   // WHEN I CLICK IT OPENS THE SETTINGS PAGE 
-  superButton.addEventListener('dblclick', function () {
+  superButton.addEventListener('click', function () {
     var settings = document.getElementById('settings');
     settings.style.display = settings.style.display === 'none' ? 'block' : 'none';
   });
@@ -75,6 +75,16 @@ document.addEventListener('DOMContentLoaded', function () {
       timerButton.style.cursor = 'pointer';
   }
 });
+
+
+  // WHEN I CLICK IT OPENS THE POMODORO PAGE 
+  timerButton.addEventListener('click', function () {
+    var pomodoro = document.getElementById('pomodoro');
+    pomodoro.style.display = pomodoro.style.display === 'none' ? 'block' : 'none';
+  });
+
+
+
 
 //sticky button
 document.addEventListener('DOMContentLoaded', function () {
@@ -206,4 +216,7 @@ function attachStickyNoteEventListeners(stickyNote) {
     stickyNoteHandle.style.cursor = 'grab';
   }
 }
+
+
+
 
