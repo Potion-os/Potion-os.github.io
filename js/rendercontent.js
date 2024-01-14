@@ -1,7 +1,4 @@
 // renderContent.js
-
-MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-
 document.addEventListener('DOMContentLoaded', function () {
     // Function to render Markdown and LaTeX content
     function renderContent() {
@@ -14,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         MathJax.typesetClear([contentDiv]);
         MathJax.typesetPromise([contentDiv]).then(() => {
           // Update the content with the rendered LaTeX
-          contentDiv.innerHTML = contentText;
+          contentDiv.innerHTML = contentDiv.innerHTML;
         });
       } else {
         // Process Markdown using Marked
@@ -31,5 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Attach renderContent to the input event for dynamic updates
     const contentEditable = document.querySelector('.content');
     contentEditable.addEventListener('input', renderContent);
-  });
   
+    // Ensure MathJax Initialization
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  }); 
